@@ -84,7 +84,8 @@ data.to_csv("scraped_tweets.csv")
 import googlemaps
 from googlemaps.places import places_autocomplete_query
 
-gmaps = googlemaps.Client('AIzaSyAuEfZdOLsxWl41KbysoZMy6rcjHIM3hc8')
+api_key = ""
+gmaps = googlemaps.Client(api_key)
 
 with open("scraped_tweets.csv", 
                 encoding="cp1252", errors='ignore') as csvfile1, \
@@ -116,7 +117,7 @@ with open("scraped_tweets.csv",
         clean_df.to_csv('processed_filtered_tweets_test.csv')
 
 # NOTE: generate iam_token and retrieve ml_instance_id based on provided documentation  
-header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + "QRN__W9Bx49U79NwyMvWiAt_HHL659MNnEKO5dsIAK39", 'ML-Instance-ID': "7ee00ccd-985d-4d5e-b163-f33410f3909b"}
+header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + "eyJraWQiOiIyMDE5MDcyNCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJpYW0tU2VydmljZUlkLWQwZWZmMDY2LTE0YjUtNDJiYy1iZjNjLWM3MGUwMDFmODllNiIsImlkIjoiaWFtLVNlcnZpY2VJZC1kMGVmZjA2Ni0xNGI1LTQyYmMtYmYzYy1jNzBlMDAxZjg5ZTYiLCJyZWFsbWlkIjoiaWFtIiwiaWRlbnRpZmllciI6IlNlcnZpY2VJZC1kMGVmZjA2Ni0xNGI1LTQyYmMtYmYzYy1jNzBlMDAxZjg5ZTYiLCJzdWIiOiJTZXJ2aWNlSWQtZDBlZmYwNjYtMTRiNS00MmJjLWJmM2MtYzcwZTAwMWY4OWU2Iiwic3ViX3R5cGUiOiJTZXJ2aWNlSWQiLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiJlNjI5ZDljNGJmZGE0ZjQwYTk2YTA0NjI4ODhiZjY3ZiJ9LCJpYXQiOjE1ODE4NzIwMjUsImV4cCI6MTU4MTg3NTYyNSwiaXNzIjoiaHR0cHM6Ly9pYW0uY2xvdWQuaWJtLmNvbS9pZGVudGl0eSIsImdyYW50X3R5cGUiOiJ1cm46aWJtOnBhcmFtczpvYXV0aDpncmFudC10eXBlOmFwaWtleSIsInNjb3BlIjoiaWJtIG9wZW5pZCIsImNsaWVudF9pZCI6ImRlZmF1bHQiLCJhY3IiOjEsImFtciI6WyJwd2QiXX0.h368Hw6rlNLV-jrCWDZ5UG4ZJu-y7lJMY_79TLf5UuRueeN9PM_clYOovMKD_t9vOBH1Nxcu3vVIGXKGMQ2D8DXzAYNc2UDz7XMB8NS1c_sfMYhIdPEFbOFTrouEXkC4wY5RyBHJM5P2XU2egZSN307oiDa4zEeDzRDssGpZFmR7NFCeWo_OPPoGqUYUXCyMYD1PbPwXrx8IEwpis_cG4pfTS81mnQIIBjl8ZIQrSQgiTkxAnzkhQMFVwEalE6WE5lA1BznQxWfCnmZzDoRE_kDFZOUdN0caaoowJSrVr2vuirJlt_1__Ji2Nsbr6sV9LlYs2_89AM81WS5rDEZVwA", 'ML-Instance-ID': "7ee00ccd-985d-4d5e-b163-f33410f3909b"}
 # NOTE: manually define and pass the array(s) of values to be scored in the next line
 with open("processed_filtered_tweets_test.csv", 
         encoding="cp1252", errors='ignore') as csvfile:
